@@ -17,7 +17,7 @@ describe('Adopt an animal on the zoo test site', function() {
 
   });
 
-var home_page = require ('./page/home_page.js');
+var home_page = require ('../pages/home_page.js');
 
   it('should be able to adopt a title by page objects', function() {
     browser.get('http://www.thetestroom.com/jswebapp/');
