@@ -1,4 +1,4 @@
-//import { element } from "protractor";
+var home_page = require ('../pages/home_page.js');
 
 // spec.js
 describe('Adopt an animal on the zoo test site', function() {
@@ -17,10 +17,10 @@ describe('Adopt an animal on the zoo test site', function() {
 
   });
 
-var home_page = require ('../pages/home_page.js');
 
-  it('should be able to adopt a title by page objects', function() {
-    browser.get('http://www.thetestroom.com/jswebapp/');
+
+  xit('should be able to adopt a title by page objects', function() {
+    browser.get('jswebapp/');
     var inputText = 'subscribe'
     home_page.enterFieldValue(inputText);
     var getHomePageText = home_page.getDynamicText();
@@ -32,7 +32,14 @@ var home_page = require ('../pages/home_page.js');
 
     expect(continue_page.getTitle()).toBe('Thank you');
     
-
   });
 
-});
+  it('should be all elements on the animal page', function(){
+    browser.get('jswebapp/')
+    var animal_page = home_page.clickContinue()
+    animal_page.backButton.isDisplayed().then(function(isDisp) { expect(isDips).toBe(true); });
+    // var foo = animal_page.backButton
+    // expect(foo.isDisplayed()).toBe(false);
+    
+  })
+})

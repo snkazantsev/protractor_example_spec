@@ -9,5 +9,9 @@ var animal_page = function() {
     return require('./confirm_page.js');
   };
 
+  
+  var backButton = element(by.buttonText('BACK'));
+  
+
 };
 module.exports = new animal_page();
