@@ -1,4 +1,4 @@
-var animal_page = function() {
+var animalPage = function() {
 
   this.selectAnimal = function(index) {
     element(by.model("animal")).$('[value="' + index + '"]').click();
@@ -9,5 +9,11 @@ var animal_page = function() {
     return require('./confirm_page.js');
   };
 
+  
+  this.backButton = element(by.buttonText('BACK'));
+  this.continueButton = element(by.buttonText('CONTINUE'));
+  this.dropDown = element(by.model("animal"));
+  
+
 };
-module.exports = new animal_page();
+module.exports = new animalPage();

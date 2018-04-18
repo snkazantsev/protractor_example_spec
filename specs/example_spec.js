@@ -1,4 +1,5 @@
-//import { element } from "protractor";
+var homePage = require ('../pages/home_page.js');
+var animalPage = require ('../pages/animal_page.js');
 
 // spec.js
 describe('Adopt an animal on the zoo test site', function() {
@@ -17,22 +18,28 @@ describe('Adopt an animal on the zoo test site', function() {
 
   });
 
-var home_page = require ('../pages/home_page.js');
 
-  it('should be able to adopt a title by page objects', function() {
-    browser.get('http://www.thetestroom.com/jswebapp/');
+
+  xit('should be able to adopt a title by page objects', function() {
+    browser.get('jswebapp/');
     var inputText = 'subscribe'
-    home_page.enterFieldValue(inputText);
-    var getHomePageText = home_page.getDynamicText();
+    homePage.enterFieldValue(inputText);
+    var getHomePageText = homePage.getDynamicText();
     expect(getHomePageText).toBe(inputText);
-    var animal_page = home_page.clickContinue();
+    var animalPage = homePage.clickContinue();
 
-    animal_page.selectAnimal(2);
-    var continue_page = animal_page.clickContinue();
+    animalPage.selectAnimal(2);
+    var continuePage = animalPage.clickContinue();
 
-    expect(continue_page.getTitle()).toBe('Thank you');
+    expect(continuePage.getTitle()).toBe('Thank you');
     
-
   });
 
-});
+  it('should be all elements on the animal page', function(){
+    browser.get('/jswebapp/animalselection.html')
+    animalPage.backButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
+    animalPage.continueButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
+    animalPage.dropDown.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
+    
+  })
+})

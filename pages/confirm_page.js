@@ -1,4 +1,4 @@
-var confirm_page = function() {
+var confirmPage = function() {
 
   this.getTitle = function() {
 
@@ -9,4 +9,4 @@ var confirm_page = function() {
 
 };
 
-module.exports = new confirm_page();
+module.exports = new confirmPage();
