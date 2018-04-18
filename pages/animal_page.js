@@ -1,4 +1,4 @@
-var animal_page = function() {
+var animalPage = function() {
 
   this.selectAnimal = function(index) {
     element(by.model("animal")).$('[value="' + index + '"]').click();
@@ -16,4 +16,4 @@ var animal_page = function() {
   
 
 };
-module.exports = new animal_page();
+module.exports = new animalPage();

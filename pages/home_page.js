@@ -1,6 +1,6 @@
 require ('./animal_page.js');
 
-var home_page = function() {
+var homePage = function() {
 
   this.enterFieldValue = function(value) {
     element(by.model('person.name')).sendKeys(value);
@@ -17,4 +17,4 @@ var home_page = function() {
   };
 
 };
-module.exports = new home_page();
+module.exports = new homePage();
