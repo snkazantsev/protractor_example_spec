@@ -10,7 +10,9 @@ var animal_page = function() {
   };
 
   
-  var backButton = element(by.buttonText('BACK'));
+  this.backButton = element(by.buttonText('BACK'));
+  this.continueButton = element(by.buttonText('CONTINUE'));
+  this.dropDown = element(by.model("animal"));
   
 
 };
