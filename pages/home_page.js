@@ -16,5 +16,9 @@ var homePage = function() {
     return require('./animal_page.js');
   };
 
+  this.continueButton = element(by.buttonText('CONTINUE'));
+  this.input = element(by.model("person.name"));
+  this.label = element(by.binding("person.name"));
+
 };
 module.exports = new homePage();

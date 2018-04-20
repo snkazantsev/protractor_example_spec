@@ -6,6 +6,7 @@ var confirmPage = function() {
 
   }
   
+  this.backToHomeButton = element(by.buttonText('BACK TO HOME'));
 
 };
 
