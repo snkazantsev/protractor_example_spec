@@ -1,46 +1,42 @@
 # HomePage:
 
-### проверка наличия элементов на странице:
+### should be proper elements on the HomePage:
 
-* текст 1
-* текст 2
-* кнопка CONTINUE
-* блок рекламы
+* h1
+* text
+* button CONTINUE
 
-### тесты
-1. проверка тайтла страницы
-1. проверка что ссылка THETESTROOM.COM ведет на соответствующую страницу
-1. проверка того что текст в поле ввода дублируется ниже
-1. проверка того что текст в поле ввода изначально пустой и ничего не дублируется
+### should be the proper title on the HomePage
+### should be legitimate THETESTROOM.COM link
+### should be empty input field by default
+### should be able to adopt a title
+
 
 
 # AnimalPage:
 
-### проверка наличия элементов на странице:
+### should be proper elements on the AnimalPage:
 
-* текст 1
-* кнопка CONTINUE
-* кнопка BACK
-* блок рекламы
+* h1
+* button CONTINUE
+* button BACK
 
-### тесты
-1. проверка тайтла страницы
-1. проверка что ссылка THETESTROOM.COM ведет на соответствующую страницу
-1. проверка того что в дропдауне 4 элемента
-1. проверка того что в дропдауне можно выбрать элемента
-1. проверка того что в после первой загрузки страницы текст в дропдауне 'Please select from the drop down below'
-1. проверка того что после выбора элемента в дропдауне, возврата на предыдущую страницу (BACK) и повторного перехода на страницу AnimalPage (CONTINUE) значение в дропдауне не сохраняеться
-1. проверка того что после выбора элемента в дропдауне, перехода на страницу ConfirmPage (CONTINUE) и возврата на страницу AnimalPage (кнопка НАЗАД в браузере) значение в дропдауне сохраняеться
+### should be proper title on the AnimalPage:
+### should be legitimate THETESTROOM.COM link
+### should be drop down text "Please select from the drop down below" by default
+### should be 4 elements in the drop down
+### should be able to select an element in the drop down
+### пока не перевел: проверка того что после выбора элемента в дропдауне, возврата на предыдущую страницу (BACK) и повторного перехода на страницу AnimalPage (CONTINUE) значение в дропдауне не сохраняеться
+
+
 
 # ConfirmPage:
 
-### проверка наличия элементов на странице:
+### should be proper elements on the ConfirmPage:
 
-* текст 1
-* текст 2
-* кнопка BACK TO HOME
-* блок рекламы
+* h1
+* text
+* button BACK TO HOME
 
-### тесты
-1. проверка тайтла страницы
-1. проверка что ссылка THETESTROOM.COM ведет на соответствующую страницу
+### should be the proper title on the ConfirmPage
+### should be legitimate THETESTROOM.COM link
