@@ -1,5 +1,6 @@
 var homePage = require ('../pages/home_page.js');
 var animalPage = require ('../pages/animal_page.js');
+var confirmPage = require ('../pages/confirm_page.js');
 
 // spec.js
 describe('Adopt an animal on the zoo test site', function() {
@@ -35,11 +36,25 @@ describe('Adopt an animal on the zoo test site', function() {
     
   });
 
+  it('should be all elements on the home page', function(){
+    browser.get('/jswebapp/index.html')
+    homePage.input.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
+    homePage.continueButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
+    homePage.label.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(false); });
+
+  })
+
   it('should be all elements on the animal page', function(){
     browser.get('/jswebapp/animalselection.html')
     animalPage.backButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
     animalPage.continueButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
     animalPage.dropDown.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
     
+  })
+
+  it('should be all elements on the confirm page', function(){
+    browser.get('/jswebapp/confirm.html')
+    confirmPage.backToHomeButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
+
   })
 })
