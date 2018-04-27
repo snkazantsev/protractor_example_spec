@@ -13,6 +13,8 @@ var animalPage = function() {
   this.backButton = element(by.buttonText('BACK'));
   this.continueButton = element(by.buttonText('CONTINUE'));
   this.dropDown = element(by.model("animal"));
+  this.h1 = element(by.tagName('h1'));
+  this.link = element(by.linkText('THETESTROOM.COM'))
   
 
 };
