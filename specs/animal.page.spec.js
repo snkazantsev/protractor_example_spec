@@ -33,7 +33,7 @@ describe('Animal page', function() {
 
     
   fit('should be drop down text "Please select from the drop down below" by default', function(){
-    var dropDownDefaultText = '     Please select from the drop down below\n    George the Turtle\n    Simba the Lion\n    Nemo the Fish'
+    var dropDownDefaultText = '     Please select from the drop down below\r\n     George the Turtle\r\n     Simba the Lion\r\n     Nemo the Fish\r\n'
     animalPage.dropDown.getText().then(function(text) {expect(text).toBe(dropDownDefaultText)})
 
   })
