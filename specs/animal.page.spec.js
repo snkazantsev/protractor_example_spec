@@ -14,76 +14,50 @@ describe('Animal page', function() {
     animalPage.continueButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
     animalPage.dropDown.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
     animalPage.h1.getText().then(function(text) { expect(text).toBe('Select you Animal from the drop down below'); });
-
   })
 
 
   it('should be proper title on the AnimalPage', function(){
     var validAnimalPageTitle = 'Zoo Adoption | Select your Animal'
     expect(browser.getTitle()).toBe(validAnimalPageTitle)
-
   })
 
   
   it('should be legitimate THETESTROOM.COM link', function(){
     var legitimateHref = 'http://www.thetestroom.com/'
     expect(animalPage.link.getAttribute('href')).toBe(legitimateHref)
-
   })
 
     
-  fit('should be drop down text "Please select from the drop down below" by default', function(){
-    var dropDownDefaultText = '     Please select from the drop down below\r\n     George the Turtle\r\n     Simba the Lion\r\n     Nemo the Fish\r\n'
-    animalPage.dropDown.getText().then(function(text) {expect(text).toBe(dropDownDefaultText)})
-
+  it('should be drop down text "Please select from the drop down below" by default', function(){
+    var dropDownDefaultTextItem_0 = 'Please select from the drop down below'
+    animalPage.dropDownItem_0.getText().then(function(text) {expect(text).toBe(dropDownDefaultTextItem_0)})
   })
 
     
-  xit('should be 4 elements in the drop down', function(){
+  it('should be 4 elements in the drop down', function(){
+    var numberOfDropDownElements = 4
+    expect(element.all(by.css('select.ng-valid option')).count()).toEqual(numberOfDropDownElements)
 
-
+    // Tried to use Page Object to the 'options' elements without luck
+    // expect((animalPage.dropDownItems).count().toEqual(numberOfDropDownElements))
   })
 
     
-  xit('should be able to select an element in the drop down', function(){
-
-
+  it('should be able to select an element in the drop down', function(){
+    var dropDownDefaultTextItem_3 = 'Nemo the Fish'
+    animalPage.selectAnimal(2)
+    // didn't find a way to get a cuttently selected item text
+    animalPage.dropDownItem_3.getText().then(function(text) {expect(text).toBe(dropDownDefaultTextItem_3)})
   })
 
     
   xit('пока не перевел', function(){
+    // since I didn't find a way to get a cuttently selected item text, I have no idea how to test it.
 
+    // проверка того что после выбора элемента в дропдауне, возврата на предыдущую страницу (BACK) и повторного перехода на страницу AnimalPage (CONTINUE) значение в дропдауне не сохраняеться
 
   })
 
-  
-
-it('should be proper elements on the AnimalPage', function(){
-
-    element(by.buttonText("CONTINUE")).click();
-    //element(by.model("animal")).$
-    element(by.model("animal")).$('[value="1"]').click();
-    element(by.partialButtonText("TINUE")).click();
-
-  });
-  
-
-  
-  xit('should be able to adopt a title by page objects', function() {
-    var inputText = 'subscribe'
-    homePage.enterFieldValue(inputText);
-    var getHomePageText = homePage.getDynamicText();
-    expect(getHomePageText).toBe(inputText);
-    var animalPage = homePage.clickContinue();
-
-    animalPage.selectAnimal(2);
-    var continuePage = animalPage.clickContinue();
-
-    expect(continuePage.getTitle()).toBe('Thank you');
-    
-  });
-
 })
-// })
 
-  
