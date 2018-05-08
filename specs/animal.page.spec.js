@@ -5,7 +5,7 @@ var confirmPage = require ('../pages/confirm_page.js');
 describe('Animal page', function() {
 
   beforeEach(function() {
-    browser.get('/jswebapp/animalselection.html')
+    browser.get('animalselection.html')
   });
 
 
@@ -13,7 +13,6 @@ describe('Animal page', function() {
     animalPage.backButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
     animalPage.continueButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
     animalPage.dropDown.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
-    // animalPage.h1.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
     animalPage.h1.getText().then(function(text) { expect(text).toBe('Select you Animal from the drop down below'); });
 
   })
@@ -26,15 +25,16 @@ describe('Animal page', function() {
   })
 
   
-  fit('should be legitimate THETESTROOM.COM link', function(){
+  it('should be legitimate THETESTROOM.COM link', function(){
     var legitimateHref = 'http://www.thetestroom.com/'
     expect(animalPage.link.getAttribute('href')).toBe(legitimateHref)
 
   })
 
     
-  xit('should be drop down text "Please select from the drop down below" by default', function(){
-
+  fit('should be drop down text "Please select from the drop down below" by default', function(){
+    var dropDownDefaultText = '     Please select from the drop down below\n    George the Turtle\n    Simba the Lion\n    Nemo the Fish'
+    animalPage.dropDown.getText().then(function(text) {expect(text).toBe(dropDownDefaultText)})
 
   })
 
