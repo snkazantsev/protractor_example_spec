@@ -3,7 +3,7 @@ var homePage = require ('../pages/home_page.js');
 describe('Home page', function() {
 
   beforeEach(function() {
-    browser.get('/jswebapp/index.html')
+    browser.get('/index.html')
   });
 
   it('should be proper elements on the HomePage', function(){
