@@ -7,6 +7,9 @@ var confirmPage = function() {
   }
   
   this.backToHomeButton = element(by.buttonText('BACK TO HOME'));
+  this.title = element(by.id('title'));
+  this.mainText = element(by.css('div.ng-scope p'));
+  this.link = element(by.linkText('THETESTROOM.COM'))
 
 };
 

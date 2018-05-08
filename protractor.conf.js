@@ -5,3 +5,4 @@ exports.config = {
   specs: ['specs/**/*.spec.js'],
   baseUrl: 'http://www.thetestroom.com/jswebapp/'
 }
+
