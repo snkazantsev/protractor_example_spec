@@ -3,7 +3,7 @@ var animalPage = require ('../pages/animal_page.js');
 var confirmPage = require ('../pages/confirm_page.js');
 
 // spec.js
-describe('Adopt an animal on the zoo test site', function() {
+xdescribe('Adopt an animal on the zoo test site', function() {
   
   xit('should be able to adopt a title', function() {
     browser.get('http://www.thetestroom.com/jswebapp/');
