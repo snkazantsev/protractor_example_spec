@@ -46,15 +46,17 @@ describe('Animal page', function() {
     
   fit('should be able to select an element in the drop down', function(){
     var nemo = 'Nemo the Fish'
-    // animalPage.selectAnimal(2)
-    // replaced
+
     return animalPage.chooseAnimal(nemo).then(function(){
-      return browser.sleep(3000);
+      return browser.sleep(1000);
     });
 
-    // didn't find a way to get a cuttently selected item text
-    // animalPage.dropDownItem_3.getText().then(function(text) {expect(text).toBe(dropDownDefaultTextItem_3)})
+    //работате только при дефолтном значении. А если что-то выбрать, то тест всегда зеленый
+    animalPage.selectedElement.getText().then(function(text){
+      expect(text).toBe('456')
+    })
   })
+
 
     
   xit('пока не перевел', function(){
