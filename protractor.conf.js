@@ -1,7 +1,6 @@
 // conf.js
 exports.config = {
   capabilities: {
-        // 'browserName': 'firefox'
     browserName: 'chrome',
     chromeOptions: {
       // run in headless mode
