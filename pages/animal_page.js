@@ -14,9 +14,6 @@ var animalPage = function() {
   this.continueButton = element(by.buttonText('CONTINUE'));
   this.selectAnimalElement = element(by.model('animal'))
 
-  this.dropDown = element(by.model("animal"));
-  this.dropDownItem_0 = element(by.model("animal")).$('[value="0"]');
-  this.dropDownItem_3 = element(by.model("animal")).$('[value="3"]');
   this.selectedElement = element(by.model("animal")).$('option:checked');
 
   this.h1 = element(by.tagName('h1'));

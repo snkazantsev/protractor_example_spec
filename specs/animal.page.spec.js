@@ -12,7 +12,6 @@ describe('Animal page', function() {
   it('should be all elements on the animal page', function(){
     animalPage.backButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
     animalPage.continueButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
-    animalPage.dropDown.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
     animalPage.h1.getText().then(function(text) { expect(text).toBe('Select you Animal from the drop down below'); });
   })
 
@@ -31,40 +30,29 @@ describe('Animal page', function() {
     
   it('should be drop down text "Please select from the drop down below" by default', function(){
     var dropDownDefaultTextItem_0 = 'Please select from the drop down below'
-    animalPage.dropDownItem_0.getText().then(function(text) {expect(text).toBe(dropDownDefaultTextItem_0)})
+    animalPage.dropDownItems.first().getText().then(function(text) {expect(text).toBe(dropDownDefaultTextItem_0)})
   })
 
     
   it('should be 4 elements in the drop down', function(){
     var numberOfDropDownElements = 4
-    expect(element.all(by.css('select.ng-valid option')).count()).toEqual(numberOfDropDownElements)
-
-    // Tried to use Page Object to the 'options' elements without luck
-    // expect((animalPage.dropDownItems).count().toEqual(numberOfDropDownElements))
-  })
-
-    
-  fit('should be able to select an element in the drop down', function(){
-    var nemo = 'Nemo the Fish'
-
-    return animalPage.chooseAnimal(nemo).then(function(){
-      return browser.sleep(1000);
-    });
-
-    //работате только при дефолтном значении. А если что-то выбрать, то тест всегда зеленый
-    animalPage.selectedElement.getText().then(function(text){
-      expect(text).toBe('456')
+    element.all(by.css('select.ng-valid option')).count().then(function(number) {
+      expect(number).toBe(numberOfDropDownElements)
     })
   })
 
-
     
-  xit('пока не перевел', function(){
-    // since I didn't find a way to get a cuttently selected item text, I have no idea how to test it.
+  it('should be able to select an element in the drop down', function(){
+    var nemo = 'Nemo the Fish'
 
-    // проверка того что после выбора элемента в дропдауне, возврата на предыдущую страницу (BACK) и повторного перехода на страницу AnimalPage (CONTINUE) значение в дропдауне не сохраняеться
+    return animalPage.chooseAnimal(nemo).then(function(){
+      return animalPage.selectedElement.getText().then(function(text){
+        expect(text).toBe(nemo)
+      })
+    });
+
+    //работате только при дефолтном значении. А если что-то выбрать, то тест всегда зеленый
 
   })
-
 })
 
