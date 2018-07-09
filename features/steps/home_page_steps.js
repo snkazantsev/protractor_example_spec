@@ -1,24 +1,12 @@
-var chai = require('chai').use(require('chai-as-promised'));
-var expect = chai.expect;
+const chai = require('chai').use(require('chai-as-promised'));
+const expect = chai.expect;
+const homePage = require("../pages/home_page.js");
+const cucumber = require("cucumber");
 
-var HomeSteps = function() {
+cucumber.When('User is on home page', function () {
+  return homePage.get();
+});
 
-  var HomePage = require("../pages/home_page.js");
-
-  this.World = function MyWorld() {
-    this.page = new HomePage();
-  };
-
-  this.Given('I go to my website', function (callback) {
-    // browser.get(url);
-    // browser.get('http://www.thetestroom.com/jswebapp/');
-    this.page.get();
-    callback();
-  });
-
-  this.Then('the result should equal $result', function (result, callback) {
-    expect(this.page.getResult()).to.eventually.equal(result).and.notify(callback);
-  });
-};
-
-module.exports = HomeSteps;
+cucumber.Then('Browser title should be equal {string}', function (title) {
+  return expect(browser.getTitle()).eventually.equal(title);
+});
