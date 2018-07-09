@@ -1,6 +1,10 @@
-require ('./animal_page.js');
+// require ('./animal_page.js');
 
-var homePage = function() {
+var HomePage = function() {
+
+  this.get = function() {
+    browser.get('http://www.thetestroom.com/jswebapp/');
+  };
 
   this.enterFieldValue = function(value) {
     element(by.model('person.name')).sendKeys(value);
@@ -27,4 +31,4 @@ var homePage = function() {
   this.link = element(by.linkText('THETESTROOM.COM'));
 
 };
-module.exports = new homePage();
+module.exports = HomePage;
