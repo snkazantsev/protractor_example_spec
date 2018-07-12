@@ -4,8 +4,8 @@ exports.config = {
     browserName: 'chrome',
     chromeOptions: {
       // run in headless mode
-      args: ['--verbose', '--privileged', '--no-sandbox', '--disable-gpu', '--window-size=1280,800', 'disable-infobars=true' ],
-      // args: ['--headless', '--verbose', '--privileged', '--no-sandbox', '--disable-gpu', '--window-size=1280,800', 'disable-infobars=true' ],
+      // args: ['--verbose', '--privileged', '--no-sandbox', '--disable-gpu', '--window-size=1280,800', 'disable-infobars=true' ],
+      args: ['--headless', '--verbose', '--privileged', '--no-sandbox', '--disable-gpu', '--window-size=1280,800', 'disable-infobars=true' ],
       prefs: {
         credentials_enable_service: false,
       },
