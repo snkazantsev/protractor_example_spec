@@ -11,10 +11,18 @@ cucumber.Then('Browser title should be equal {string}', function (title) {
   return expect(browser.getTitle()).eventually.equal(title);
 });
 
+// cucumber.Then('Proper elements should be on the HomePage', async function () {
+//   await expect(homePage.input.isDisplayed()).eventually.equal(true);
+//   await expect(homePage.label.isDisplayed()).eventually.equal(false);
+//   await expect(homePage.continueButton.isDisplayed()).eventually.equal(true);
+// });
+
 cucumber.Then('Proper elements should be on the HomePage', function () {
-  expect(homePage.input.isDisplayed()).eventually.equal(true);
-  expect(homePage.label.isDisplayed()).eventually.equal(true);
-  expect(homePage.continueButton.isDisplayed()).eventually.equal(true);
+  const promises = [];
+  promises.push(expect(homePage.input.isDisplayed()).eventually.equal(true));
+  promises.push(expect(homePage.label.isDisplayed()).eventually.equal(false));
+  promises.push(expect(homePage.continueButton.isDisplayed()).eventually.equal(true));
+  return Promise.all(promises);
 });
  
 cucumber.Then('THETESTROOM.COM link should be legitimate', function () {

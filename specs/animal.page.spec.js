@@ -10,9 +10,11 @@ describe('Animal page', function() {
 
 
   it('should be all elements on the animal page', function(){
-    animalPage.backButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
-    animalPage.continueButton.isDisplayed().then(function(isDisp) { expect(isDisp).toBe(true); });
-    animalPage.h1.getText().then(function(text) { expect(text).toBe('Select you Animal from the drop down below'); });
+    const promises=[]
+    promises.push(homePage.input.isDisplayed()).eventually.equal(true);
+    promises.push(homePage.label.isDisplayed()).eventually.equal(true);
+    promises.push(homePage.continueButton.isDisplayed()).eventually.equal(true);
+    return Promise.all(promises);
   })
 
 
